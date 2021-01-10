@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.css"
+        integrity="sha512-RsYtIYyiOJl4t7q2IjH8bN13ERX7wnCf05UwnIQpAYpwevU4z16bTxatUROsUvW+GMybm73cE9zaVveri2xodg=="
+        crossorigin="anonymous" />
+    <title>FilterIt.com</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="center-align">FilterIt</h1>
+        <input type="text" id="filterinput" placeholder="search name">
+        <ul id="names" class="collection with-header">
+            <li class="collection-header">
+                <h4>A</h4>
+            </li>
+            <li class="collection-item">
+                <a href="#">Array</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">AI</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Archive</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Atom</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Anaconda</a>
+            </li>
+
+            <li class="collection-header">
+                <h4>B</h4>
+            </li>
+            <li class="collection-item">
+                <a href="#">Bits</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Binary</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Bandwidth</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Benchmark</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">BIOS</a>
+            </li>
+
+            <li class="collection-header">
+                <h4>C</h4>
+            </li>
+            <li class="collection-item">
+                <a href="#">Code</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">.com</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Cut</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Copy</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Cdrive</a>
+            </li>
+
+            <li class="collection-header">
+                <h4>D</h4>
+            </li>
+            <li class="collection-item">
+                <a href="#">Desktop</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">DevOps</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">dotcom</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">dvd</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">DOM</a>
+            </li>
+
+            <li class="collection-header">
+                <h4>E</h4>
+            </li>
+            <li class="collection-item">
+                <a href="#">Electron</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Energy</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Eat</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Easy</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+    <script>
+        let filterinput = document.getElementById('filterinput');
+
+        filterinput.addEventListener("keyup", fun1);
+
+        function fun1() {
+            let filtervalue =document.getElementById('filterinput').value.toUpperCase();
+
+            let ul = document.getElementById('names');
+            let li = document.querySelectorAll('li.collection-item');
+
+            for (let i = 0; i < li.length; i++) {
+                let a = li[i].getElementsByTagName('a')[0];
+                
+                if (a.innerHTML.toUpperCase().indexOf(filtervalue) > -1) {
+                    li[i].style.display = '';
+                } else {
+                    li[i].style.display = 'none';
+
+                }
+            }
+
+        }
+    </script>
+</body>
+
+</html>
